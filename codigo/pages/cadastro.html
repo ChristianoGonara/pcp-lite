@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCP Lite · Cadastro</title>
+    <script src="../js/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="login-body">
+    <header id="header-login" class="header-login"></header>
+
+    <main class="login-main">
+        <div class="login-top-logo">
+            <img class="login-logo-large" src="../img/logo_preto.png" alt="PCP Lite">
+            <span class="login-logo-text">PCP Lite</span>
+        </div>
+        <section class="login-card" aria-label="Cadastro">
+            <h1 class="login-heading">Criar conta</h1>
+            <p class="login-subheading">Preencha seus dados para acessar</p>
+
+            <form id="form-cadastro" class="login-form" autocomplete="on">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input id="nome" name="nome" type="text" class="login-input" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="usuario">Usuário</label>
+                    <input id="usuario" name="usuario" type="text" class="login-input" placeholder="Seu usuário" required>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input id="senha" name="senha" type="password" class="login-input" placeholder="Crie uma senha" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmar">Confirmar senha</label>
+                    <input id="confirmar" name="confirmar" type="password" class="login-input" placeholder="Repita a senha" required>
+                </div>
+                <div class="login-actions">
+                    <a href="login.html" class="login-forgot">Já tenho conta</a>
+                </div>
+                <button type="submit" class="login-button">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="login-footer">
+        <p>&copy; 2025 PCP Lite</p>
+    </footer>
+    <script src="../js/script/cadastro.js" defer></script>
+</body>
+</html>

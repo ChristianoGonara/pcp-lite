@@ -1,0 +1,161 @@
+#main-charles .dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  justify-content: start;
+  align-items: stretch;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+#main-charles.main {
+  padding-bottom: 0;
+}
+
+#main-charles .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.titulo-historico {
+  font-size: 12px !important;
+}
+
+#main-charles .dashboard-container .card-conteudo h2 {
+  font-size: 16px;
+}
+
+#main-charles .dashboard-container .card-conteudo {
+  width: 100%;
+  font-size: 12px;
+}
+
+#main-charles .dashboard-container #container-capacidade,
+#main-charles .dashboard-container #container-pmp {
+  width: 100%;
+  margin: 0;
+  font-size: 12px;
+}
+
+
+/* Ajustes de altura e rolagem para os cards do catálogo em Estratégico */
+#main-charles .lista-produtos {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+#main-charles .painel-bom {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+#main-charles .catalogo-unico {
+  height: 300px;
+  display: grid;
+  grid-template-columns: 1fr .9fr;
+  gap: 20px;
+  overflow: hidden;
+  width: 98.5%;
+  margin-top: 30px;
+  margin-right: 20px;
+  font-size: 12px;
+}
+
+#main-charles .catalogo-unico .col-esquerda,
+#main-charles .catalogo-unico .col-direita {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#main-charles .catalogo-unico h2 {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#main-charles #form-cadastro-produto {
+  overflow-y: auto;
+  max-height: clamp(110px, 25vh, 170px);
+  padding-right: 8px;
+}
+
+#main-charles .form-cadastro {
+  margin: 6px 0 10px;
+  padding: 8px;
+}
+
+#main-charles .form-cadastro .linha {
+  gap: 3px;
+  margin-bottom: 6px;
+}
+
+#main-charles .duas-colunas {
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+#main-charles .grupo-pecas {
+  margin: 4px 0 6px;
+  padding: 6px;
+}
+
+#main-charles .peca-linha {
+  gap: 4px;
+}
+
+#main-charles .form-cadastro input,
+#main-charles .form-cadastro select {
+  height: 30px;
+}
+
+#main-charles #btn-adicionar-produto {
+  height: 30px;
+}
+
+/* (revert) remover rolagem específica do formulário de cadastro */
+
+#main-charles .catalogo-esquerda {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#main-charles .catalogo-direita {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#main-charles .nome-func {
+  font-size: 16px;
+}
+
+#main-charles .dashboard-container .card-subtitulo {
+  font-size: 12px;
+}
+
+#main-charles .dashboard-container .card-conteudo h3 {
+  font-size: 16px;
+}
+
+#main-charles .dashboard-container .tabela-analise th,
+#main-charles .dashboard-container .tabela-analise td {
+  font-size: 12px;
+  padding: 4px;
+}
+
+#main-charles .dashboard-container .container-decision-options h4,
+#main-charles .dashboard-container .container-decision-options li {
+  font-size: 12px;
+}

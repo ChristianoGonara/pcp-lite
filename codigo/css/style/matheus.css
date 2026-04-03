@@ -1,0 +1,436 @@
+:root {
+  --bg: #f7f7f8;
+  --surface: #ffffff;
+  --text: #121417;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --primary: #FF3131;
+  --primary-ink: #600202;
+  --accent: #f2c6c6;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --space: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+  display: grid;
+  grid-template-columns: 1fr .9fr;
+  gap: 20px;
+}
+
+.catalogo-esquerda,
+.catalogo-direita {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.catalogo-unico {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.catalogo-unico h2 {
+  font-size: 18px;
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+.catalogo-esquerda h2,
+.catalogo-direita h2 {
+  font-size: 18px;
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+.topo-catalogo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+#btn-toggle-cadastro,
+#btn-abrir-cadastro {
+  appearance: none;
+  border: 1px solid var(--primary);
+  background: transparent;
+  color: var(--primary-ink);
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease;
+}
+
+#btn-toggle-cadastro:hover,
+#btn-abrir-cadastro:hover {
+  background: var(--accent);
+  color: var(--primary-ink);
+}
+
+.form-cadastro {
+  margin: 10px 0 16px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.form-cadastro h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.form-cadastro .linha {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.form-cadastro label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.form-cadastro input,
+.form-cadastro select {
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-cadastro input:focus,
+.form-cadastro select:focus {
+  border-color: var(--primary);
+}
+
+.duas-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.grupo-pecas {
+  margin: 6px 0 10px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+}
+
+.grupo-pecas legend {
+  padding: 0 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.peca-linha {
+  display: grid;
+  grid-template-columns: 2fr .8fr;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.botoes-cadastro {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+#btn-salvar-produto,
+#btn-cancelar-cadastro {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: #fff;
+}
+
+#btn-salvar-produto {
+  border-color: var(--primary);
+  color: var(--primary-ink);
+}
+
+#btn-salvar-produto:hover {
+  background: var(--accent);
+}
+
+#btn-cancelar-cadastro {
+  border-color: var(--border);
+  color: var(--text);
+}
+
+#btn-cancelar-cadastro:hover {
+  background: #f5f5f5;
+}
+
+.lista-produtos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.produto-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "codigo nome preco" "categoria nome lead";
+  row-gap: 4px;
+  column-gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  cursor: pointer;
+  transition: border-color .15s ease, background .15s ease;
+}
+
+.produto-card:hover {
+  border-color: #f0a5a5;
+  background: #fff;
+}
+
+.produto-codigo {
+  grid-area: codigo;
+  align-self: center;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--primary-ink);
+  border: 1px solid #e8b1b1;
+}
+
+.produto-categoria {
+  grid-area: categoria;
+  align-self: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.produto-nome {
+  grid-area: nome;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.produto-preco {
+  grid-area: preco;
+  margin: 0;
+  font-weight: 800;
+  color: var(--primary-ink);
+}
+
+.produto-leadtime {
+  grid-area: lead;
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+  justify-self: end;
+}
+
+.painel-bom {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  background: #fff;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mensagem-selecao {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+  padding: 6px 0;
+}
+
+.conteudo-bom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bom-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+}
+
+.bom-item .tag {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #f6f6f7;
+  color: #363a40;
+  border: 1px solid var(--border);
+}
+
+.total-bom {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-weight: 700;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width:1080px) {
+  .catalogo-card {
+    grid-template-columns: 1fr;
+  }
+
+  .painel-bom {
+    min-height: 160px;
+  }
+}
+
+@media (max-width:560px) {
+  .main {
+    padding: 16px;
+  }
+
+  .produto-card {
+    grid-template-columns: 1fr;
+    grid-template-areas: "nome" "codigo" "categoria" "preco" "lead";
+  }
+
+  .produto-leadtime {
+    justify-self: start;
+  }
+}
+
+.lista-produtos {
+  max-height: 420px;
+  overflow: auto;
+  padding-right: 4px;
+  gap: 8px;
+}
+
+.produto-card {
+  padding: 10px;
+  border-radius: 8px;
+  row-gap: 2px;
+  column-gap: 8px;
+  grid-template-columns: auto 1fr auto;
+}
+
+.produto-nome {
+  font-size: 14px;
+}
+
+.produto-preco {
+  font-size: 14px;
+}
+
+.produto-categoria {
+  font-size: 11px;
+}
+
+.produto-leadtime {
+  font-size: 11px;
+}
+
+.produto-codigo {
+  font-size: 11px;
+  padding: 3px 6px;
+  border-radius: 999px;
+}
+
+.catalogo-esquerda,
+.catalogo-direita {
+  padding: 16px;
+}
+
+.catalogo-esquerda h2,
+.catalogo-direita h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+@media (max-width:1080px) {
+  .lista-produtos {
+    max-height: 320px;
+  }
+}
+
+.lista-produtos::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lista-produtos::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 8px;
+}
+
+.lista-produtos::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hidden {
+  display: none !important
+}
+
+.cadastro-container summary {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--primary-ink);
+  border: 1px solid var(--primary);
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: #fff;
+  transition: background .2s ease;
+  margin-bottom: 10px;
+}
+
+.cadastro-container summary:hover {
+  background: var(--accent);
+}
+
+.cadastro-container[open] summary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.cadastro-container form {
+  margin-top: 12px;
+}

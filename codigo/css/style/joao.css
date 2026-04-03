@@ -1,0 +1,267 @@
+/* ===== Container ===== */
+.content-lotes {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 2rem;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+#container-cards-tatico {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+  margin-top: 30px;
+  margin-right: 20px;
+}
+
+#container-cards-tatico .card {
+  max-width: none;
+  height: 620px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fornecedores: lista rola, botões fixos no rodapé do card */
+.fornecedores-card .list {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.fornecedores-card .stock-actions {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  padding-top: 8px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Lotes: conteúdo rola, botões fixos no rodapé do card */
+.lotes-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.lotes-card .lotes-list {
+  flex: 1 1 auto;
+  overflow: auto;
+  min-height: 0;
+}
+
+.lotes-card .card-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 2;
+  padding-right: 0;
+}
+
+.lotes-card .card-header .botao-add {
+  position: static;
+  margin-left: auto;
+  margin-right: 0 !important;
+}
+
+.lotes-card .botao {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+@media (max-width: 992px) {
+  #container-cards-tatico {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Container Lotes ===== */
+.lotes-de-producao {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+}
+
+.lotes-de-producao:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.lotes-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ===== Título ===== */
+.lotes-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.lotes-titulo h3 {
+  font-size: 1.4rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.linha {
+  display: flex;
+  gap: 10px;
+}
+
+/* ===== Lotes Individuais ===== */
+.lotes-box {
+  display: flex;
+  gap: 1rem;
+  margin: 0.8rem 0;
+  padding: 1rem 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.lotes-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Lotes Informacoes ===== */
+.lotes-box-info {
+  flex: 1;
+}
+
+.lotes-box-indicador {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.lotes-box-indicador p {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.lotes-box-indicador .status {
+  color: black;
+  max-height: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.lotes-box-indicador .status:hover {
+  background-color: #198754;
+}
+
+/* ===== Botões ===== */
+.botao {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 1.5rem;
+}
+
+.botao .btn {
+  padding: 10px 60px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #fff;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.programar {
+  background-color: #6c757d;
+}
+
+.programar:hover {
+  cursor: pointer;
+  background-color: #5c636a;
+}
+
+.liberar {
+  background-color: #198754;
+}
+
+.liberar:hover {
+  cursor: pointer;
+  background-color: #157347;
+
+}
+
+.btn-excluir {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dc3545;
+  color: #fff;
+  border: 1px solid #b02a37;
+  border-radius: 4px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-excluir:hover {
+  background-color: #b02a37;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.material-symbols-outlined {
+  font-size: 18px;
+  line-height: 1;
+}
+
+#main-joao .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.check-lotes {
+  font-size: 28px;
+}
+
+.lote-checkbox {
+  margin-right: 10px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.lote-checkbox:checked+.lotes-box {
+  border-color: #007bff;
+  background: #e8f2ff;
+}
+
+#main-joao #container-cards-tatico .card .card-title,
+#main-joao .card .card-title {
+  font-size: 16px;
+}
+
+#main-joao #container-cards-tatico .card {
+  font-size: 12px;
+}

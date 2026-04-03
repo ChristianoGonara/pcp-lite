@@ -1,0 +1,32 @@
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+title: PCP lite
+authors:
+  - family-names: Vale
+    given-names: Bernardo Belini
+  - family-names: Araújo
+    given-names: Christiano Gonçalves
+  - family-names: Murilo
+    given-names: João Francisco Ramos
+  - family-names: Nobre
+    given-names: Thiago
+  - family-names: Coelho
+    given-names: Matheus Nicoli Andrade
+  - family-names: Santos
+    given-names: Charles Henrique de Paula
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Tavares
+    given-names: Cleiton Silva
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Batisteli
+    given-names: João Pedro Oliveira
+keywords:
+  - PCP
+  - planejamento
+  - produção
+repository-code: https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-2-ti1-2010100-pcp-lite.git
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2025-12-11

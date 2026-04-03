@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCP Lite / Tatico</title>
+
+    <script src="../js/script.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header id="header-joao" class="header">
+        <!-- Conteúdo do cabeçalho: logo, título, navegação -->
+
+    </header>
+
+    <main id="main-joao" class="main">
+        <!-- Div para inserir o menu na pagina -->
+        <div id="menu-container" class="content"></div>
+
+        <div id="container-cards-tatico">
+
+            <section class="card fornecedores-card" aria-labelledby="fornecedores-title">
+                <div class="card-header">
+                    <h3 id="fornecedores-title" class="card-title"><span class="material-symbols-outlined">group</span> Fornecedores</h3>
+                </div>
+                <div class="list" id="lista-fornecedores-thiago"></div>
+                <div class="stock-actions">
+                    <button type="button" class="btn-1" id="cadastrar-btn-thiago">Cadastrar Fornecedor</button>
+                    <button type="button" class="btn-1" id="reenviarBtn">Reenviar Pendentes</button>
+                </div>
+            </section>
+
+            <section class="card lotes-card lotes-de-producao" aria-labelledby="lotes-title">
+                <div class="card-header">
+                    <h3 id="lotes-title" class="card-title"><span class="material-symbols-outlined">check_circle</span> Lotes de Produção</h3>
+                    <button class="botao-add" aria-label="Adicionar novo lote" data-bs-toggle="modal" data-bs-target="#cadastroModal">
+                        <span class="material-symbols-outlined add-icon" aria-hidden="true">add</span>
+                    </button>
+                </div>
+
+                    <!-- Área de lista de lotes -->
+                    <div class="lotes-list">
+
+                    <!-- LOTE 1 -->
+                    <div class="linha">
+
+                        <!-- CheckBox -->
+                        <input type="checkbox" id="lote1" class="lote-checkbox">
+
+                        <!-- Lotes Box-->
+                        <label class="lotes-box" for="lote1">
+
+                            <!-- Lotes Informacoes-->
+                            <div class="lotes-box-info">
+                                <p class="fw-bold">Lote 1</p>
+                                <p>CELL001</p>
+                                <p>450</p>
+                                <p>Linha SMT</p>
+                            </div>
+
+                            <!-- Lotes Btn -->
+                            <div class="lotes-box-indicador">
+
+                                <!-- Lotes Btn Liberado-->
+                                <p class="status btn-primary">liberado</p>
+
+                                <!-- Lotes Btn Excluir-->
+                                <button class="btn-excluir" data-bs-toggle="modal" data-bs-target="#excluirModal">
+                                    <span class="material-symbols-outlined" aria-hidden="true">delete</span>
+                                </button>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- LOTE 2 -->
+                    <div class="linha">
+
+                        <!-- CheckBox -->
+                        <input type="checkbox" class="lote-checkbox" id="lote2">
+
+                        <!-- Lotes Box-->
+                        <label class="lotes-box" for="lote2">
+
+                            <!-- Lotes Informacoes-->
+                            <div class="lotes-box-info">
+                                <p class="fw-bold">Lote 2</p>
+                                <p>DRONE001</p>
+                                <p>120</p>
+                                <p>Mesa Montagem</p>
+                            </div>
+
+                            <!-- Lotes Btn -->
+                            <div class="lotes-box-indicador">
+
+                                <!-- Lotes Btn Liberado-->
+                                <p class="status btn-primary">liberado</p>
+
+                                <!-- Lotes Btn Excluir-->
+                                <button class="btn-excluir" data-bs-toggle="modal" data-bs-target="#excluirModal">
+                                    <span class="material-symbols-outlined" aria-hidden="true">delete</span>
+                                </button>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- LOTE 3 -->
+                    <div class="linha">
+
+                        <!-- CheckBox -->
+                        <input type="checkbox" class="lote-checkbox" id="lote3">
+
+                        <!-- Lotes Box-->
+                        <label class="lotes-box" for="lote3">
+
+                            <!-- Lotes Informacoes-->
+                            <div class="lotes-box-info">
+                                <p class="fw-bold">Lote 3</p>
+                                <p>MON001</p>
+                                <p>210</p>
+                                <p>Teste ICT</p>
+                            </div>
+
+                            <!-- Lotes Btn -->
+                            <div class="lotes-box-indicador">
+
+                                <!-- Lotes Btn Liberado-->
+                                <p class="status btn-primary">liberado</p>
+
+                                <!-- Lotes Btn Excluir-->
+                                <button class="btn-excluir" data-bs-toggle="modal" data-bs-target="#excluirModal">
+                                    <span class="material-symbols-outlined" aria-hidden="true">delete</span>
+                                </button>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- LOTE 4 -->
+                    <div class="linha">
+
+                        <!-- CheckBox -->
+                        <input type="checkbox" class="lote-checkbox" id="lote4">
+
+                        <!-- Lotes Box-->
+                        <label class="lotes-box" for="lote4">
+
+                            <!-- Lotes Informacoes-->
+                            <div class="lotes-box-info">
+                                <p class="fw-bold">Lote 4</p>
+                                <p>TV100</p>
+                                <p>550</p>
+                                <p>Pick & Place</p>
+                            </div>
+
+                            <!-- Lotes Btn -->
+                            <div class="lotes-box-indicador">
+
+                                <!-- Lotes Btn Liberado-->
+                                <p class="status btn-primary">liberado</p>
+
+                                <!-- Lotes Btn Excluir-->
+                                <button class="btn-excluir" data-bs-toggle="modal" data-bs-target="#excluirModal">
+                                    <span class="material-symbols-outlined" aria-hidden="true">delete</span>
+                                </button>
+                            </div>
+                        </label>
+                    </div>
+                    </div>
+                    <!-- fim da lista de lotes -->
+
+                    <!-- Botões -->
+                    <div class="botao" data-bs-toggle="modal" data-bs-target="#programarModal">
+                        <div class="btn programar">
+                            <a href="#">Programar</a>
+                        </div>
+
+                        <div id="btn-liberar" class="btn liberar btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#liberarModal">
+                            <a href="#">Liberar</a>
+                        </div>
+                    </div>
+
+                <!-- Modal Liberação -->
+                <div class="modal fade" id="liberarModal" tabindex="-1" aria-labelledby="reenvioModalLabel"
+                    aria-hidden="true">
+
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="liberacaoModalLabel">Liberar</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Fechar"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <p>Deseja realmente liberar esses lotes?</p>
+                                <p>Esta ação iniciara a producao dos lotes selecionados.</p>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-primary" id="confirmarLiberacao">Confirmar
+                                    Liberação</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Excluir -->
+                <div class="modal fade" id="excluirModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir lotes</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <p>Tem certeza que deseja excluir?</p>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-danger">Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Programar -->
+                <div class="modal fade" id="programarModal" tabindex="-1" aria-labelledby="tituloModalProgramar"
+                    aria-hidden="true">
+
+                    <div class="modal-dialog modal-lg">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="tituloModalEdicao">Inicio de Produção do Lote</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <!-- Modal Body -->
+                            <div class="modal-body">
+                                <form id="form-cadastrar-lote" novalidate>
+                                    <label for="campoHorario" class="form-label">Data de Início</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text material-symbols-outlined"
+                                            aria-hidden="true">schedule</span>
+                                        <input type="date" id="campoHorario" class="form-control" required>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                <button type="button" id="btn-salvar-editar" class="btn btn-primary"
+                                    data-bs-dismiss="modal">Programar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Cadastrar Lotes -->
+                <div class="modal fade" id="cadastroModal" tabindex="-1" aria-labelledby="tituloModalCadastro"
+                    aria-hidden="true">
+
+                    <div class="modal-dialog modal-lg">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="tituloModalEdicao">Cadastrar Lotes</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <!-- Body -->
+                            <div class="modal-body">
+                                <form id="form-editar-maquina" novalidate>
+                                    <div class="row g-3">
+
+                                        <div class="col-md-6">
+                                            <label for="campoArtefato" class="form-label">Produto</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text material-symbols-outlined"
+                                                    aria-hidden="true">box</span>
+                                                <input type="text" id="campoArtefato" class="form-control"
+                                                    placeholder="Ex.: CELL001" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="campoQuantidade" class="form-label">Quantidade</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text material-symbols-outlined"
+                                                    aria-hidden="true">numbers</span>
+                                                <input type="number" id="campoQuantidade" class="form-control"
+                                                    placeholder="Ex.: 220" min="1" step="1" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="campoLinha" class="form-label">Linha de Operação</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text material-symbols-outlined"
+                                                    aria-hidden="true">view_list</span>
+                                                <select id="campoLinha" class="form-select">
+                                                    <option value="">Selecione...</option>
+                                                    <option value="Linha SMT">Linha SMT</option>
+                                                    <option value="Pick & Place">Pick & Place</option>
+                                                    <option value="Mesa Montagem">Mesa Montagem</option>
+                                                    <option value="Estação Teste">Estação Teste</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                <button type="button" id="btn-salvar-editar" class="btn btn-primary"
+                                    data-bs-dismiss="modal">Salvar Alterações</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Modal Reenvio de Pendentes (Fornecedores) -->
+                <div class="modal fade" id="reenvioModal" tabindex="-1" aria-labelledby="reenvioModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="reenvioModalLabel">Reenviar Pendentes</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Deseja realmente reenviar todos os pedidos pendentes?</p>
+                                <p>Esta ação notificará todos os fornecedores com pedidos pendentes.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-primary" id="confirmarReenvio">Confirmar Reenvio</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Cadastro/Edicao de Fornecedores -->
+                <div class="modal fade" id="cadastro-modal-thiago" tabindex="-1" aria-labelledby="cadastroModalThiagoLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="cadastroModalThiagoLabel">Cadastrar Fornecedor</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="form-cadastro-thiago">
+                                    <div class="mb-3">
+                                        <label for="nome-thiago" class="form-label">Nome</label>
+                                        <input type="text" class="form-control" id="nome-thiago" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="status-thiago" class="form-label">Status</label>
+                                        <select class="form-select" id="status-thiago">
+                                            <option value="pendente">pendente</option>
+                                            <option value="enviado">enviado</option>
+                                            <option value="confirmado">confirmado</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="item-thiago" class="form-label">Item</label>
+                                        <input type="text" class="form-control" id="item-thiago" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="unidade-thiago" class="form-label">Unidade</label>
+                                        <input type="number" class="form-control" id="unidade-thiago" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="data-thiago" class="form-label">Data</label>
+                                        <input type="date" class="form-control" id="data-thiago" />
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-primary" id="salvar-cadastro-thiago">Salvar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="footer-joao" class="footer">
+        <!-- Conteúdo do rodapé: informações de copyright, links úteis -->
+        <p>&copy; 2025 PCP Lite. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/codigo/js/script/joao.js"></script>
+    <script src="../js/script/THIAGO.js"></script>
+</body>
+
+</html>

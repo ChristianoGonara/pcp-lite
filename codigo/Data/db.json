@@ -1,0 +1,408 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "usuario": "admin",
+      "senha": "admin123",
+      "nome": "Admin PCP"
+    },
+    {
+      "id": "2",
+      "usuario": "pcp",
+      "senha": "pcp2025",
+      "nome": "PCP Lite"
+    },
+    {
+      "id": "auto1",
+      "senha": "abc12345",
+      "nome": "Teste Auto",
+      "usuario": "teste_auto_1"
+    }
+  ],
+  "maquinas": [
+    {
+      "id": "2",
+      "nome": "Pick & Place 01",
+      "linha": "Pick & Place",
+      "status": "operando"
+    },
+    {
+      "id": "3",
+      "nome": "Mesa Montagem 01",
+      "linha": "Mesa Montagem",
+      "status": "parada"
+    },
+    {
+      "id": "cd74",
+      "nome": "",
+      "status": "",
+      "horario": "",
+      "linha": "Linha SMT"
+    },
+    {
+      "id": "cd50",
+      "nome": "",
+      "status": "",
+      "horario": "",
+      "linha": "Linha SMT"
+    },
+    {
+      "id": "16d1",
+      "nome": "2r23",
+      "status": "parada",
+      "horario": "r232",
+      "linha": "Linha SMT"
+    },
+    {
+      "id": "b29e",
+      "nome": "dq",
+      "status": "manutencao",
+      "horario": "qwdq",
+      "linha": ""
+    },
+    {
+      "id": "1c0e",
+      "nome": "bernardo",
+      "status": "operando",
+      "horario": "123",
+      "linha": "Pick & Place"
+    }
+  ],
+  "operacoes": [
+    {
+      "id": "1",
+      "codigo": "OP001",
+      "artefato": "CELL001",
+      "quantidade": 450,
+      "horario": "08:00-12:00",
+      "status": "em-andamento",
+      "linha": "Linha SMT",
+      "maquinaId": 1
+    },
+    {
+      "id": "2",
+      "codigo": "OP004",
+      "artefato": "CELL001",
+      "quantidade": 350,
+      "horario": "13:00-17:00",
+      "status": "programado",
+      "linha": "Linha SMT",
+      "maquinaId": 1
+    },
+    {
+      "id": "3",
+      "codigo": "OP002",
+      "artefato": "TV100",
+      "quantidade": 700,
+      "horario": "10:00-14:00",
+      "status": "em-andamento",
+      "linha": "Mesa Montagem",
+      "maquinaId": 3
+    },
+    {
+      "id": "4",
+      "codigo": "OP003",
+      "artefato": "FERRO200",
+      "quantidade": 400,
+      "horario": "06:00-12:00",
+      "status": "programado",
+      "linha": "Estação Teste",
+      "maquinaId": 4
+    },
+    {
+      "id": "5",
+      "codigo": "OP005",
+      "artefato": "NOTE550",
+      "quantidade": 300,
+      "horario": "12:00-16:00",
+      "status": "programado",
+      "linha": "Pick & Place",
+      "maquinaId": 2
+    },
+    {
+      "id": "6",
+      "codigo": "OP006",
+      "artefato": "SMT-LINE",
+      "quantidade": 900,
+      "horario": "18:00-22:00",
+      "status": "em-andamento",
+      "linha": "Linha SMT",
+      "maquinaId": 1
+    }
+  ],
+  "producao": [
+    {
+      "id": "e398",
+      "nome": "teste",
+      "ano": "2",
+      "mes": "12",
+      "periodo_inicio": "10",
+      "periodo_final": "15",
+      "demanda": "11000",
+      "producao": "10000",
+      "status": "ok"
+    },
+    {
+      "id": "715f",
+      "nome": "teste",
+      "ano": "Ano",
+      "mes": "12",
+      "periodo_inicio": "10",
+      "periodo_final": "15",
+      "demanda": "11000",
+      "producao": "10000",
+      "status": "ok"
+    },
+    {
+      "id": "8275",
+      "nome": "teste2",
+      "ano": "2025",
+      "mes": "11",
+      "periodo_inicio": "4",
+      "periodo_final": "9",
+      "demanda": "12000",
+      "producao": "12000",
+      "status": "ok"
+    },
+    {
+      "id": "d74d",
+      "nome": "",
+      "ano": "2026",
+      "mes": "3",
+      "periodo_inicio": "4",
+      "periodo_final": "3",
+      "demanda": "01",
+      "producao": "10",
+      "status": "ok"
+    },
+    {
+      "id": "e672",
+      "nome": "teste",
+      "ano": "2025",
+      "mes": "12",
+      "periodo_inicio": "4",
+      "periodo_final": "14",
+      "demanda": "12000",
+      "producao": "8000",
+      "status": "ok"
+    },
+    {
+      "id": "ff07",
+      "nome": "teste",
+      "ano": "2025",
+      "mes": "12",
+      "periodo_inicio": "9",
+      "periodo_final": "15",
+      "demanda": "10000",
+      "producao": "9000",
+      "status": "ok"
+    },
+    {
+      "id": "17bc",
+      "nome": "teste",
+      "ano": "2025",
+      "mes": "12",
+      "periodo_inicio": "2",
+      "periodo_final": "10",
+      "demanda": "10000",
+      "producao": "2000",
+      "status": "crítico"
+    }
+  ],
+  "lotes": [
+    {
+      "id": "f8b4",
+      "produto": "Celular",
+      "quantidade": 23,
+      "linha": "Linha SMT",
+      "status": "em produção",
+      "dataInicio": null
+    }
+  ],
+  "produtos": [
+    {
+      "id": "placa-mae",
+      "nome": "Placa-mae Celular",
+      "historico": [
+        {
+          "periodo": "1º Tri",
+          "estoque": 850,
+          "vendas": 100,
+          "capacidade": 80
+        },
+        {
+          "periodo": "2º Tri",
+          "estoque": 1200,
+          "vendas": 120,
+          "capacidade": 85
+        },
+        {
+          "periodo": "3º Tri",
+          "estoque": 950,
+          "vendas": 130,
+          "capacidade": 90
+        },
+        {
+          "periodo": "4º Tri",
+          "estoque": 1050,
+          "vendas": 140,
+          "capacidade": 95
+        }
+      ]
+    },
+    {
+      "id": "controlador-voo",
+      "nome": "Controlador de Voo",
+      "historico": [
+        {
+          "periodo": "1º Tri",
+          "estoque": 190,
+          "vendas": 20,
+          "capacidade": 50
+        },
+        {
+          "periodo": "2º Tri",
+          "estoque": 300,
+          "vendas": 22,
+          "capacidade": 55
+        },
+        {
+          "periodo": "3º Tri",
+          "estoque": 200,
+          "vendas": 26,
+          "capacidade": 60
+        },
+        {
+          "periodo": "4º Tri",
+          "estoque": 280,
+          "vendas": 30,
+          "capacidade": 65
+        }
+      ]
+    },
+    {
+      "id": "camera-drone",
+      "nome": "Câmera Drone 4K",
+      "historico": [
+        {
+          "periodo": "1º Tri",
+          "estoque": 95,
+          "vendas": 10,
+          "capacidade": 20
+        },
+        {
+          "periodo": "2º Tri",
+          "estoque": 105,
+          "vendas": 13,
+          "capacidade": 22
+        },
+        {
+          "periodo": "3º Tri",
+          "estoque": 90,
+          "vendas": 9,
+          "capacidade": 19
+        },
+        {
+          "periodo": "4º Tri",
+          "estoque": 115,
+          "vendas": 11,
+          "capacidade": 21
+        }
+      ]
+    }
+  ],
+  "produtos-B_O.M": [
+    {
+      "id": "2",
+      "codigo": "DRONE001",
+      "nome": "Drone Vision Pro",
+      "categoria": "Drone",
+      "preco": 4599,
+      "leadtime": 15
+    },
+    {
+      "id": "3",
+      "codigo": "MON001",
+      "nome": "Monitor UltraWide 34\"",
+      "categoria": "Monitor",
+      "preco": 3299,
+      "leadtime": 10
+    },
+    {
+      "id": "4",
+      "codigo": "TV100",
+      "nome": "TV 4K 100\"",
+      "categoria": "TV",
+      "preco": 3999,
+      "leadtime": 12
+    },
+    {
+      "id": "5",
+      "codigo": "FERRO200",
+      "nome": "Ferro de Passar 200",
+      "categoria": "Eletrodoméstico",
+      "preco": 199,
+      "leadtime": 5
+    },
+    {
+      "id": "6",
+      "codigo": "NOTE550",
+      "nome": "Notebook 550",
+      "categoria": "Notebook",
+      "preco": 5599,
+      "leadtime": 20
+    },
+    {
+      "id": "7",
+      "codigo": "SMT-LINE",
+      "nome": "Placa SMT Linha",
+      "categoria": "Placa",
+      "preco": 1299,
+      "leadtime": 14
+    }
+  ],
+  "B_O_M": [
+    {
+      "id": "1",
+      "codigoProduto": "CELL001",
+      "materiais": [
+        {
+          "codigo": "PCB001",
+          "nome": "Placa-mãe Celular",
+          "qtd": 1,
+          "custo": 285.5
+        },
+        {
+          "codigo": "BAT001",
+          "nome": "Bateria Li-ion 4000mAh",
+          "qtd": 1,
+          "custo": 85
+        },
+        {
+          "codigo": "LCD001",
+          "nome": "Tela OLED 6.5\"",
+          "qtd": 1,
+          "custo": 195
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "codigoProduto": "DRONE001",
+      "materiais": [
+        {
+          "codigo": "PCB001",
+          "nome": "Placa-mãe Celular",
+          "qtd": 2,
+          "custo": 285.5
+        },
+        {
+          "codigo": "BAT001",
+          "nome": "Bateria Li-ion 4000mAh",
+          "qtd": 2,
+          "custo": 85
+        }
+      ]
+    }
+  ]
+}

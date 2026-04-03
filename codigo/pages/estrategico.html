@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCP Lite</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/script.js" defer></script>
+    <script src="../js/script/charles.js" defer></script>
+    <script src="../js/script/christiano.js" defer></script>
+    <script src="../js/script/matheus.js" defer></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+
+    <header id="header-charles" class="header">
+        <!-- Conteúdo do cabeçalho: logo, título, navegação -->
+         
+    </header>
+
+    <main id="main-charles" class="main">
+        <!-- Div para inserir o menu na pagina -->
+        <div id="menu-container" class="content">  
+        </div>
+
+        <section class="catalogo-card">
+          <div class="catalogo-unico">
+            <div class="col-esquerda">
+              <h2><span class="material-symbols-outlined">category</span> Produtos da Fábrica</h2>
+              <details class="cadastro-container">
+                <summary>Cadastrar Produto</summary>
+                <form id="form-cadastro-produto" class="form-cadastro">
+                  <div class="linha">
+                    <label for="cad-codigo">Código</label>
+                    <input id="cad-codigo" name="codigo" type="text" placeholder="Ex: CELL002" required>
+                  </div>
+                  <div class="linha">
+                    <label for="cad-nome">Nome</label>
+                    <input id="cad-nome" name="nome" type="text" placeholder="Ex: Celular Galaxy X2" required>
+                  </div>
+                  <div class="linha">
+                    <label for="cad-categoria">Categoria</label>
+                    <select id="cad-categoria" name="categoria" required>
+                      <option value="">Selecione</option>
+                      <option>Produto Acabado</option>
+                      <option>Eletrônico</option>
+                      <option>Energia</option>
+                      <option>Display</option>
+                      <option>Óptico</option>
+                      <option>Mecânico</option>
+                      <option>Estrutural</option>
+                      <option>Embalagem</option>
+                      <option>Acessório</option>
+                    </select>
+                  </div>
+                  <div class="duas-colunas">
+                    <div class="linha">
+                      <label for="cad-preco">Preço</label>
+                      <input id="cad-preco" name="preco" type="number" step="0.01" placeholder="Ex: 1899.90" required>
+                    </div>
+                    <div class="linha">
+                      <label for="cad-leadtime">Lead Time (dias)</label>
+                      <input id="cad-leadtime" name="leadtime" type="number" min="0" placeholder="Ex: 15" required>
+                    </div>
+                  </div>
+                  <fieldset class="grupo-pecas">
+                    <legend>Peças do Produto (B.O.M)</legend>
+                    <div class="peca-linha"><input name="peca_codigo_1" type="text" placeholder="Código da peça"><input name="peca_qtd_1" type="number" min="1" placeholder="Qtd"></div>
+                    <div class="peca-linha"><input name="peca_codigo_2" type="text" placeholder="Código da peça"><input name="peca_qtd_2" type="number" min="1" placeholder="Qtd"></div>
+                    <div class="peca-linha"><input name="peca_codigo_3" type="text" placeholder="Código da peça"><input name="peca_qtd_3" type="number" min="1" placeholder="Qtd"></div>
+                    <div class="peca-linha"><input name="peca_codigo_4" type="text" placeholder="Código da peça"><input name="peca_qtd_4" type="number" min="1" placeholder="Qtd"></div>
+                    <div class="peca-linha"><input name="peca_codigo_5" type="text" placeholder="Código da peça"><input name="peca_qtd_5" type="number" min="1" placeholder="Qtd"></div>
+                  </fieldset>
+                  <button type="submit" id="btn-adicionar-produto">Adicionar ao Catálogo</button>
+                </form>
+              </details>
+              <h2>Catálogo</h2>
+              <div class="lista-produtos">
+                <div class="produto-card" data-id="CELL001">
+                  <span class="produto-codigo">CELL001</span>
+                  <span class="produto-categoria">Produto Acabado</span>
+                  <h3 class="produto-nome">Celular Galaxy X1</h3>
+                  <p class="produto-preco">R$ 1899.90</p>
+                  <p class="produto-leadtime">15d</p>
+                </div>
+                <div class="produto-card" data-id="DRONE001">
+                  <span class="produto-codigo">DRONE001</span>
+                  <span class="produto-categoria">Produto Acabado</span>
+                  <h3 class="produto-nome">Drone Pro FPV</h3>
+                  <p class="produto-preco">R$ 2499.90</p>
+                  <p class="produto-leadtime">20d</p>
+                </div>
+                <div class="produto-card" data-id="MON001">
+                  <span class="produto-codigo">MON001</span>
+                  <span class="produto-categoria">Produto Acabado</span>
+                  <h3 class="produto-nome">Monitor 4K Gaming</h3>
+                  <p class="produto-preco">R$ 1299.90</p>
+                  <p class="produto-leadtime">12d</p>
+                </div>
+                <div class="produto-card" data-id="PCB001">
+                  <span class="produto-codigo">PCB001</span>
+                  <span class="produto-categoria">Eletrônico</span>
+                  <h3 class="produto-nome">Placa-mãe Celular</h3>
+                  <p class="produto-preco">R$ 285.50</p>
+                  <p class="produto-leadtime">21d</p>
+                </div>
+                <div class="produto-card" data-id="BAT001">
+                  <span class="produto-codigo">BAT001</span>
+                  <span class="produto-categoria">Energia</span>
+                  <h3 class="produto-nome">Bateria Li-ion 4000mAh</h3>
+                  <p class="produto-preco">R$ 85.00</p>
+                  <p class="produto-leadtime">10d</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-direita">
+              <h2><span class="material-symbols-outlined">format_list_bulleted</span> Lista de Materiais (B.O.M)</h2>
+              <div class="painel-bom">
+                <p class="mensagem-selecao">Selecione um produto</p>
+                <div class="conteudo-bom"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Cards de Christiano -->
+        <div class="dashboard-container">
+            <div class="card-conteudo">
+                <h2>
+                    <span class="material-symbols-outlined card-icon">timeline</span>
+                    Análises Históricas
+                </h2>
+                <p class="card-subtitulo">Vendas, estoques e capacidade dos últimos períodos</p>
+                <div class="header-analise-produto">
+                    <h3 class="titulo-historico">Histórico de Vendas e Capacidade</h3>
+                    <select id="select-produto-historico" class="form-select form-select-sm">
+                        <option value="placa-mae">Placa-mae Celular</option>
+                        <option value="controlador-voo">Controlador de Voo</option>
+                        <option value="camera-drone">Câmera Drone 4K</option>
+                    </select>
+                </div>
+                <table class="tabela-analise">
+                    <thead>
+                        <tr>
+                            <th>Trimestre</th>
+                            <th>Vendas</th>
+                            <th>Estoque</th>
+                            <th>Capacidade</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="container-grafico-historico">
+                    <canvas id="graficoEstoqueHistorico" height="120"></canvas>
+                </div>
+            </div>
+
+            
+
+            <div class="card-conteudo">
+                <h2>
+                    <span class="material-symbols-outlined card-icon">list_alt</span>
+                    Base para Decisão
+                </h2>
+                <p class="card-subtitulo">Produzir para estoque ou sob demanda?</p>
+                <div class="container-decision-options">
+                    <div class="box-decision-options">
+                        <h4>Pra Estoque</h4>
+                        <ul>
+                            <li>Demanda estável</li>
+                            <li>Produtos padronizados</li>
+                            <li>Economia de escala</li>
+                        </ul>
+                    </div>
+                    <div class="box-decision-options is-recomendado">
+                        <h4>Sob Demanda</h4>
+                        <ul>
+                            <li>Demanda variável</li>
+                            <li>Produtos customizados</li>
+                            <li>Menor capital imobilizado</li>
+                        </ul>
+                        <div class="badge-recomendado">Recomendado</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Capacidade (movido para dentro do grid) -->
+            <div id="container-capacidade">
+                <div class="div-titulo-icon">
+                    <div class="nome-icon-func">
+                        <span class="material-symbols-outlined">factory</span>
+                        <h1 class="nome-func">Capacidade</h1>
+                    </div>
+                </div>
+                <div id="dados-capacidade">
+                    <div>
+                        <div class="nome-progresso">
+                            <p>Máquinas</p>
+                            <p>92%</p>
+                        </div>
+                        <progress id="progresso-maquinas" class="barras-progresso" value="92" max="100"></progress>
+                    </div>
+                    <div>
+                        <div class="nome-progresso">
+                            <p>Pessoas</p>
+                            <p>85%</p>
+                        </div>
+                        <progress id="progresso-pessoas" class="barras-progresso" value="85" max="100"></progress>
+                    </div>
+                    <div>
+                        <div class="nome-progresso">
+                            <p>Meta produção</p>
+                            <p>78%</p>
+                        </div>
+                        <progress id="progresso-meta-producao" class="barras-progresso" value="78" max="100"></progress>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PMP (movido para dentro do grid) -->
+            <div id="container-pmp">
+                <div class="div-titulo-icon">
+                    <div class="nome-icon-func">
+                        <span class="material-symbols-outlined">box</span>
+                        <h1 class="nome-func">PMP</h1>
+                    </div>
+                    <div class="container-botao-add-meta-producao">
+                        <button type="button" id="btn-abrir-modal-criar" class="botao-add" data-bs-toggle="modal" data-bs-target="#modal-criar-meta">
+                            <span class="material-symbols-outlined add-icon" aria-hidden="true">add</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="dados-capacidade">
+                    <div id="container-periodo">
+                        <select id="filtro-selec-ano" class="selec-ano form-select" aria-label="Default select example"></select>
+                        <select id="filtro-selec-mes" class="selec-mes form-select" aria-label="Default select example">
+                            <option selected>Mes</option>
+                            <option value="1">Jan</option>
+                            <option value="2">Fev</option>
+                            <option value="3">Mar</option>
+                            <option value="4">Abr</option>
+                            <option value="5">Mai</option>
+                            <option value="6">Jun</option>
+                            <option value="7">Jul</option>
+                            <option value="8">Ago</option>
+                            <option value="9">Set</option>
+                            <option value="10">Out</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Des</option>
+                        </select>
+                    </div>
+                    <table class="tabela-pmp">
+                        <thead>
+                            <tr>
+                                <th>Período</th>
+                                <th>Demanda</th>
+                                <th>Produção</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="pmp-legenda">
+                    <div class="legend-item"><span class="status-dot status-ok"></span><span>Verde: vamos conseguir</span></div>
+                    <div class="legend-item"><span class="status-dot status-apertado"></span><span>Amarelo: apertado</span></div>
+                    <div class="legend-item"><span class="status-dot status-critico"></span><span>Vermelho: crítico</span></div>
+                </div>
+            </div>
+
+        <!-- Modais dos cards de Christiano -->
+        <div class="modal fade" id="modalReposicao" tabindex="-1" aria-labelledby="modalReposicaoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalReposicaoLabel">Solicitar Reposição</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Preencha os dados para solicitar a reposição do item.</p>
+                        <form class="modal-form">
+                            <div class="mb-3">
+                                <label for="item-modal" class="form-label">Item:</label>
+                                <select id="item-modal" class="form-select">
+                                    <option selected>Selecione um item...</option>
+                                    <option value="placa-mae">Placa-mae Celular</option>
+                                    <option value="controlador-voo">Controlador de Voo</option>
+                                    <option value="camera-drone">Câmera Drone 4K</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="qtd-modal" class="form-label">Quantidade:</label>
+                                <input type="number" id="qtd-modal" class="form-control" placeholder="Digite a quantidade">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Confirmar Solicitação</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalRelatorioEstoque" tabindex="-1" aria-labelledby="modalRelatorioEstoqueLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalRelatorioEstoqueLabel">Relatório de Estoque</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="conteudo-relatorio-estoque"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--div para agrupar as funcionalidades-->
+        <div id="container-func" hidden>
+            <!--div para inserir o codigo de capacidade-->
+            <div id="container-capacidade">
+                <div class="div-titulo-icon">
+                    <!--icon inserido na frente do texto-->
+                    <div class="nome-icon-func">
+                        <span class="material-symbols-outlined">
+                            factory
+                        </span>
+                        <h1 class="nome-func">
+                            Capacidade
+                        </h1>
+                    </div>
+                </div>
+                <!--div para agrupar as baras de progresso-->
+                <div id="dados-capacidade">
+                    <div>
+                        <div class="nome-progresso">
+                            <p>Máquinas</p>
+                            <p>92%</p>
+                        </div>
+                        <progress id="progresso-maquinas" class="barras-progresso" value="92" max="100"></progress>
+                    </div>
+
+                    <div>
+                        <div class="nome-progresso">
+                            <p>Pessoas</p>
+                            <p>85%</p>
+                        </div>
+                        <progress id="progresso-pessoas" class="barras-progresso" value="85" max="100"></progress>
+                    </div>
+
+                    <div>
+                        <div class="nome-progresso">
+                            <p>Meta produção</p>
+                            <p>78%</p>
+                        </div>
+                        <progress id="progresso-meta-producao" class="barras-progresso" value="78" max="100"></progress>
+                    </div>
+                </div>
+            </div>
+            
+            <!--div para inserir o codigo de PMP plano mestre de produção-->
+            <div id="container-pmp">
+                <div class="div-titulo-icon">
+                    <!--icon inserido na frente do texto-->
+                    <div class="nome-icon-func">
+                        <span class="material-symbols-outlined">
+                            box
+                        </span>
+                        <h1 class="nome-func">
+                            PMP
+                        </h1>
+                    </div>
+                    <div class="container-botao-add-meta-producao">
+                        <button type="button" id="btn-abrir-modal-criar" class="btn btn-meta-producao  btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal-criar-meta">
+                            <span class="material-symbols-outlined add-icon" aria-hidden="true">
+                                add
+                            </span>                            
+                        </button>
+                    </div>
+                </div>
+                <!--div para agrupar itens-->
+                <div id="dados-capacidade">
+                    
+                    <div id="container-periodo">
+                        
+                        <select id="filtro-selec-ano" class="selec-ano form-select" aria-label="Default select example">
+                            
+                        </select>
+
+                        <select id="filtro-selec-mes" class="selec-mes form-select" aria-label="Default select example">
+                            <option selected>Mes</option>
+                            <option value="1">Jan</option>
+                            <option value="2">Fev</option>
+                            <option value="3">Mar</option>
+                            <option value="4">Abr</option>
+                            <option value="5">Mai</option>
+                            <option value="6">Jun</option>
+                            <option value="7">Jul</option>
+                            <option value="8">Ago</option>
+                            <option value="9">Set</option>
+                            <option value="10">Out</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Des</option>
+                        </select>
+
+                    </div>
+
+                    <table class="tabela-pmp">
+
+                        <thead>
+                            <tr>
+                                <th>Período</th>
+                                <th>Demanda</th>
+                                <th>Produção</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+
+                        </thead>
+                        
+                        <tbody>
+
+                            
+
+                        </tbody>
+                    </table>
+                    
+                </div>
+                <div class="pmp-legenda">
+                    <div class="legend-item"><span class="status-dot status-ok"></span><span>Verde: vamos conseguir</span></div>
+                    <div class="legend-item"><span class="status-dot status-apertado"></span><span>Amarelo: apertado</span></div>
+                    <div class="legend-item"><span class="status-dot status-critico"></span><span>Vermelho: crítico</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal criar editar -->
+        <div class="modal fade" id="modal-criar-meta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div>
+                            <input id="nome-meta-producao" class="form-control" type="text" placeholder="Nome" aria-label="default input example">
+                        </div>
+
+                        <hr>
+
+                        <div class="selects-modal">
+
+                            <select id="ano-meta-producao" class="selec-ano-modal form-select" aria-label="Default select example">                                
+                            
+                            </select>
+                            
+                            <select id="mes-meta-producao" class="selec-mes-modal form-select" aria-label="Default select example">
+                                <option selected>Mes</option>
+                                <option value="1">Jan</option>
+                                <option value="2">Fev</option>
+                                <option value="3">Mar</option>
+                                <option value="4">Abr</option>
+                                <option value="5">Mai</option>
+                                <option value="6">Jun</option>
+                                <option value="7">Jul</option>
+                                <option value="8">Ago</option>
+                                <option value="9">Set</option>
+                                <option value="10">Out</option>
+                                <option value="11">Nov</option>
+                                <option value="12">Des</option>
+
+                            </select>
+
+                            <select id="dia-inicio-meta-producao" class="select-dia-mes form-select" aria-label="Seleção do dia do mês">
+                                <option selected>Dia inicial</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+
+                            </select>
+                            
+                            <select id="dia-final-meta-producao" class="select-dia-mes form-select" aria-label="Seleção do dia do mês">
+                                <option selected>Dia Final </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+
+                            </select>
+
+                        </div>
+
+                        <hr>
+                        <div class="container-form-meta-producao">
+                            <input id="meta-meta-producao" class="form-meta-producao form-control" type="number" placeholder="Meta de Produção" aria-label="default input example">
+                        
+                            <input id="atual-meta-producao" class="form-meta-producao form-control" type="number" placeholder="Produção atual" aria-label="default input example">
+                            
+                        </div>
+                        
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="button" id="btn-criar-modal-1" class="btn btn-primary" data-bs-dismiss="modal">
+                            Criar
+                        </button>
+                        <button type="button" id="btn-editar-modal-1" class="btn btn-primary" data-bs-dismiss="modal">
+                            Editar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal info -->
+        <div class="modal fade" id="modal-info-meta" tabindex="-1" aria-labelledby="nome-meta-editar" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="nome-meta-editar"></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="list-item-meta-producao">
+                            <div class="item-meta-producao">
+                                <h2 class="nome-item-list-meta-producao">Periodo:</h2>
+                                <p id="paragrafo-periodo-info"></p>
+                            </div>
+                            <div class="item-meta-producao">
+                                <h2 class="nome-item-list-meta-producao">Ano:</h2>
+                                <p id="paragrafo-ano-info"></p>
+                            </div>
+                            <div class="item-meta-producao">
+                                <h2 class="nome-item-list-meta-producao">Mes:</h2>
+                                <p id="paragrafo-mes-info"></p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="container-list-metas-producao">
+                            <div class="item-meta-producao">
+                                <h2 class="nome-item-list-meta-producao">Demanda:</h2>
+                                <p id="paragrafo-demanda-info"></p>
+                            </div>
+
+                            <div class="item-meta-producao">
+                                <h2 class="nome-item-list-meta-producao">Produção atual:</h2>
+                                <p id="paragrafo-atual-info"></p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btn-deletar-modal-info" class="btn btn-deletar-meta-producao btn-secondary" data-bs-dismiss="modal">
+                            Deletar
+                        </button>
+                        <button type="button" id="btn-abrir-modal-info" class="btn btn-editar-meta-producao btn-primary" data-bs-toggle="modal" data-bs-target="#modal-criar-meta">
+                            Editar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer-charles" class="footer">
+        <!-- Conteúdo do rodapé: informações de copyright, links úteis -->
+        <p>&copy; 2025 PCP Lite. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

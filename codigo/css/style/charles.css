@@ -1,0 +1,286 @@
+.cor-verde {
+    color: green;
+}
+
+.cor-laranja {
+    color: orange;
+}
+
+.cor-vermelho {
+    color: red;
+}
+
+/* container dos cards principais */
+#container-func {
+    display: flex;
+    gap: 20px;
+    /* espaço entre os cards */
+}
+
+/* cards: Capacidade e PMP */
+#container-capacidade {
+    background-color: #FFFFFF;
+    width: 38%;
+    /* um pouco menor para sobrar mais espaço pro PMP */
+    border: 1px solid #c9c9c9;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+}
+
+#container-pmp {
+    background-color: #FFFFFF;
+    width: 58%;
+    /* card do PMP mais largo */
+    border: 1px solid #c9c9c9;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+}
+
+.nome-icon-func {
+    display: flex;
+}
+
+.div-titulo-icon {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0px auto 20px 0px;
+    gap: 10px;
+}
+
+/* título dos cards */
+.nome-func {
+    font-size: 18px;
+    margin: 0;
+}
+
+.btn-meta-producao {
+    padding: 7px !important;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+}
+
+.btn-info-meta-producao {
+    padding: 0px !important;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+}
+
+/* listas do modal de info */
+.container-list-metas-producao {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-item-meta-producao {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 40px;
+}
+
+.nome-item-list-meta-producao {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.item-meta-producao {
+    display: grid;
+    margin: 0px 20px 10px 0px;
+}
+
+#icon-info-meta-producao {
+    font-size: 15px;
+    font-variation-settings: 'OPSZ' 15;
+}
+
+.nome-progresso {
+    display: flex;
+    justify-content: space-between;
+}
+
+.barras-progresso {
+    width: 100%;
+}
+
+/* tabela do PMP */
+.tabela-pmp {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.tabela-pmp th,
+.tabela-pmp td {
+    padding: 6px 4px;
+}
+
+/* borda só entre as linhas da tabela */
+.tabela-pmp tbody tr {
+    border-bottom: 1px solid #c9c9c9;
+}
+
+.tabela-pmp tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* controla largura das colunas da tabela PMP */
+.tabela-pmp th:nth-child(1),
+.tabela-pmp td:nth-child(1) {
+    /* Período */
+    width: 25%;
+}
+
+.tabela-pmp th:nth-child(2),
+.tabela-pmp td:nth-child(2) {
+    /* Demanda */
+    width: 20%;
+}
+
+.tabela-pmp th:nth-child(3),
+.tabela-pmp td:nth-child(3) {
+    /* Produção */
+    width: 20%;
+}
+
+.tabela-pmp th:nth-child(4),
+.tabela-pmp td:nth-child(4) {
+    /* Status */
+    width: 12%;
+    text-align: center;
+}
+
+/* última coluna (botões) mais estreita */
+.tabela-pmp th:nth-child(5),
+.tabela-pmp td:nth-child(5) {
+    width: 8%;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.container-form-meta-producao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form-meta-producao {
+    width: 40%;
+    margin-right: 40px;
+}
+
+.status-ok {
+    background-color: #16a34a;
+}
+
+.status-apertado {
+    background-color: #f59e0b;
+}
+
+.status-critico {
+    background-color: #cf0000;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.pmp-legenda {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.pmp-legenda .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #374151;
+}
+
+.status-apertado {
+    background-color: #f59e0b;
+    border-radius: 50px;
+    padding: 4px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.status-critico {
+    background-color: #E00000;
+    border-radius: 50px;
+    padding: 4px;
+    font-size: 15px;
+    color: #fff;
+}
+
+/* selects do filtro PMP */
+#container-periodo {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.selec-ano {
+    width: 80px;
+    height: 30px;
+    font-size: 12px;
+    margin: 0px 10px 20px 0px;
+}
+
+.selec-mes {
+    width: 80px;
+    height: 30px;
+    font-size: 12px;
+}
+
+.select-dia-mes {
+    width: 130px;
+    margin-right: 10px;
+}
+
+.selec-ano-modal {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.selec-mes-modal {
+    width: 80px;
+    margin-right: 10px;
+}
+
+.selects-modal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#btn-deletar-modal-info {
+    background-color: red;
+}
+
+/* responsividade: empilha os cards em telas menores */
+@media (max-width: 900px) {
+    #container-func {
+        flex-direction: column;
+    }
+
+    #container-capacidade,
+    #container-pmp {
+        width: 100%;
+    }
+}

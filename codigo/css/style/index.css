@@ -1,0 +1,35 @@
+#conteudo-menu{ max-width: 1100px; margin: 0 auto; padding: 40px 16px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: calc(100vh - 140px); }
+
+#logo-pag-principal{ width: clamp(72px, 10vw, 120px); margin: 24px auto 12px; display: block; }
+
+#nome-empresa{ font-family: 'Poppins', Helvetica, Arial, sans-serif; font-size: clamp(28px, 3.2vw, 42px); font-weight: 700; color: #111827; letter-spacing: 0.02em; }
+
+#sub-titulo-empresa{ margin: 8px 0 24px; color: #6b7280; font-family: 'Inter', Helvetica, Arial, sans-serif; font-size: clamp(14px, 1.6vw, 18px); }
+
+#botoes-direcionamento{ display: grid; width: 100%; grid-template-columns: repeat(3, minmax(240px, 1fr)); gap: 16px; align-items: stretch; }
+
+.botoes-menu{ background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.08); transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer; }
+
+.botoes-menu:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.10); }
+
+.titulo-botoes-menu{ margin: 8px 0 0; font-size: 20px; font-weight: 600; color: #1f2937; font-family: 'Poppins', Helvetica, Arial, sans-serif; }
+
+.resumo-botao-menu{ font-size: 14px; color: #6b7280; font-family: 'Inter', Helvetica, Arial, sans-serif; }
+
+#icons-botao-menu{ background: #fee2e2; color: #dc2626; font-size: 40px; font-variation-settings: 'OPSZ' 40; padding: 14px; margin: 6px 0 10px 0; border-radius: 16px; line-height: 1; }
+
+@media (max-width: 576px){
+  #conteudo-menu{ padding: 24px 12px; }
+  #icons-botao-menu{ font-size: 32px; padding: 12px; }
+  .titulo-botoes-menu{ font-size: 18px; }
+  .resumo-botao-menu{ font-size: 13px; }
+}
+
+@media (max-width: 992px){
+  #botoes-direcionamento{ grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+}
+
+@media (max-width: 640px){
+  #botoes-direcionamento{ grid-template-columns: 1fr; }
+}
+ 
