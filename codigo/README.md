@@ -1,7 +1,3 @@
 # Código do Projeto
 
-Mantenha neste diretório todo o código fonte do projeto. 
-
-Se necessário, descreva neste arquivo aspectos relevantes da estrutura de diretórios criada para organização do código.
-
-Bom e bonito e Novo 
+Este diretório contém o código-fonte da aplicação, desenvolvido em JavaScript, HTML e CSS, focado na lógica de gestão industrial.
